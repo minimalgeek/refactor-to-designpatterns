@@ -6,9 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class PrimeCalculatorProxyTest {
+public class PrimeCalculatorTest {
 
-  private static IPrimeCalculator primeCalculator;
+  private static NotEfficientPrimeCalculator primeCalculator;
 
   @BeforeAll
   static void init() {
