@@ -1,11 +1,11 @@
 package com.csmastery.proxy;
 
-public class NoPatternProxyClient implements IProxyClient {
+public class NotEfficientPrimeCalculator implements IPrimeCalculator {
 
   @Override
-  public boolean isPrime(int i) {
+  public boolean isPrime(long i) {
     int counter=0;
-    for(int num = i; num>=1; num--)
+    for(long num = i; num>=1; num--)
     {
       if(i%num==0)
       {
