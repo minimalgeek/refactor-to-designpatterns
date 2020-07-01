@@ -12,7 +12,7 @@ public class ChainClientTest {
 
   @BeforeEach
   public void init() {
-    chainClient = new NoPatternChainClient();
+    chainClient = new ChainClient();
   }
 
   @Test
