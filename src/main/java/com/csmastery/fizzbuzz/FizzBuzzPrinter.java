@@ -1,5 +1,8 @@
 package com.csmastery.fizzbuzz;
 
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class FizzBuzzPrinter {
 
   private FizzBuzz fizzBuzz;
@@ -9,13 +12,7 @@ public class FizzBuzzPrinter {
   }
 
   public String printFizzBuzzQozz(int num) {
-    StringBuffer buffer = new StringBuffer();
-    for (int i = 1; i <= num; i++) {
-      buffer.append(fizzBuzz.convert(i));
-      buffer.append('\n');
-    }
-    buffer.setLength(buffer.length() - 1);
-    return buffer.toString();
+    return IntStream.range(1, num + 1).mapToObj(i -> fizzBuzz.convert(i)).collect(Collectors.joining("\n"));
   }
 
 }
