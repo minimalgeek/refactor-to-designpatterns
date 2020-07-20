@@ -17,7 +17,7 @@ public class Pizza {
     } else if (type == PizzaType.NAPOLETANA) {
       return String.format(DESCRIPTION_BASE, "thin", "tomato", "cheese");
     }
-    return "No pizza type provided";
+    throw new IllegalArgumentException("Please provide a known pizza type");
   }
 
   public int calculateCalories() {
@@ -28,7 +28,7 @@ public class Pizza {
     } else if (type == PizzaType.NAPOLETANA) {
       return 50 + 50 + 50;
     }
-    return 0;
+    throw new IllegalArgumentException("Please provide a known pizza type");
   }
 
 }

@@ -2,7 +2,7 @@ package com.csmastery.abstractfactory;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 public class PizzaMakerTest {
 
@@ -34,5 +34,10 @@ public class PizzaMakerTest {
     Pizza pizza = pizzaMaker.makePizza(PizzaType.NAPOLETANA);
     assertThat(pizza.generateDescription()).isEqualTo("This pizza has thin dough, tomato base and cheese toppings");
     assertThat(pizza.calculateCalories()).isEqualTo(150);
+  }
+
+  @Test
+  public void throwsExceptionOnNullType() {
+    assertThatThrownBy(() -> pizzaMaker.makePizza(null)).isInstanceOf(IllegalArgumentException.class);
   }
 }
