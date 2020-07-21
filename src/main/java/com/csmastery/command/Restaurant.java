@@ -5,6 +5,7 @@ import com.csmastery.command.orders.ICommand;
 import com.csmastery.command.orders.JuniorOrder;
 import com.csmastery.command.orders.MediorOrder;
 import com.csmastery.command.service.Chef;
+import com.csmastery.command.service.Cook;
 
 import java.util.Stack;
 
@@ -14,7 +15,7 @@ public class Restaurant {
 
     public static void main(String[] args) {
         Chef chef = new Chef();
-        com.csmastery.command.service.Cook cook = new com.csmastery.command.service.Cook();
+        Cook cook = new Cook();
 
         ICommand juniorOrder = new JuniorOrder(chef);
         ICommand mediorOrder = new MediorOrder(chef, cook);
@@ -24,7 +25,7 @@ public class Restaurant {
             orderHistory.push(juniorOrder1);
             juniorOrder1.execute();
         });
-        IWaiter juniorWaitress = new com.csmastery.command.controller.JuniorWaitress(juniorOrder);
+        IWaiter juniorWaitress = new JuniorWaitress(juniorOrder);
         IWaiter mediorWaiter = new MediorSteakWaiter(mediorOrder);
         IWaiter mediorWaitress = new MediorSteakWaitress(mediorOrder);
         

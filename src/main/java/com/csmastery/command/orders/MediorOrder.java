@@ -5,10 +5,10 @@ import com.csmastery.command.service.Cook;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class MediorOrder implements com.csmastery.command.orders.ICommand {
+public class MediorOrder implements ICommand {
 
-    private com.csmastery.command.service.Chef chef;
-    private com.csmastery.command.service.Cook cook;
+    private Chef chef;
+    private Cook cook;
     
     @Override
     public void execute() {

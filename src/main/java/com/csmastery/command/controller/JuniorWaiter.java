@@ -4,9 +4,9 @@ import com.csmastery.command.orders.ICommand;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class JuniorWaiter implements com.csmastery.command.controller.IWaiter {
+public class JuniorWaiter implements IWaiter {
 
-  private com.csmastery.command.orders.ICommand command;
+  private ICommand command;
 
   public void makeOrder() {
     command.execute();

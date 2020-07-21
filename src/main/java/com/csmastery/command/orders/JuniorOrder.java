@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class JuniorOrder implements ICommand {
 
-    private com.csmastery.command.service.Chef chef;
+    private Chef chef;
     
     @Override
     public void execute() {
