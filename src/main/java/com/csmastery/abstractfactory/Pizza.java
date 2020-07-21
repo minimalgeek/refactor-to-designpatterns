@@ -1,34 +1,30 @@
 package com.csmastery.abstractfactory;
 
+import com.csmastery.abstractfactory.product.Base;
+import com.csmastery.abstractfactory.product.Dough;
+import com.csmastery.abstractfactory.product.Topping;
+
 public class Pizza {
 
   private static final String DESCRIPTION_BASE = "This pizza has %s dough, %s base and %s toppings";
-  private PizzaType type;
 
-  public Pizza(PizzaType type) {
-    this.type = type;
+  private Dough dough;
+  private Topping topping;
+  private Base base;
+
+  public Pizza(Dough dough, Topping topping, Base base) {
+    this.dough = dough;
+    this.topping = topping;
+    this.base = base;
   }
 
+
   public String generateDescription() {
-    if (type == PizzaType.SONGOKU) {
-      return String.format(DESCRIPTION_BASE, "thick", "tomato", "ham, mushroom and cheese");
-    } else if (type == PizzaType.FOUR_CHEESE) {
-      return String.format(DESCRIPTION_BASE, "thick", "sour cream", "four cheese");
-    } else if (type == PizzaType.NAPOLETANA) {
-      return String.format(DESCRIPTION_BASE, "thin", "tomato", "cheese");
-    }
-    throw new IllegalArgumentException("Please provide a known pizza type");
+    return String.format(DESCRIPTION_BASE, this.dough.getName(), this.base.getName(), this.topping.getName());
   }
 
   public int calculateCalories() {
-    if (type == PizzaType.SONGOKU) {
-      return 100 + 50 + 3 * 50;
-    } else if (type == PizzaType.FOUR_CHEESE) {
-      return 100 + 100 + 4 * 50;
-    } else if (type == PizzaType.NAPOLETANA) {
-      return 50 + 50 + 50;
-    }
-    throw new IllegalArgumentException("Please provide a known pizza type");
+    return this.dough.getCalories() + this.base.getCalories() + this.topping.getCalories();
   }
 
 }
