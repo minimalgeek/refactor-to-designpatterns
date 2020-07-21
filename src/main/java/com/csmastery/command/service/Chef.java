@@ -1,4 +1,4 @@
-package com.csmastery.command;
+package com.csmastery.command.service;
 
 public class Chef {
 
