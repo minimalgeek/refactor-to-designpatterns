@@ -1,11 +1,12 @@
 package com.csmastery.command;
 
+import com.csmastery.command.controller.IWaiter;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 
 public abstract class AbstractWaiterTest {
   protected IWaiter iWaiter;
