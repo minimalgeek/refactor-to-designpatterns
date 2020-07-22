@@ -1,4 +1,4 @@
-package com.csmastery.command;
+package com.csmastery.command.model;
 
 public class Chef {
 
