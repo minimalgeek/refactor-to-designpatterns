@@ -6,7 +6,7 @@ public class PizzaMaker {
     if (type == null) {
       throw new IllegalArgumentException("Please provide a known pizza type");
     }
-    return new Pizza(type);
+    return new Pizza(type.getFactory().createDough(), type.getFactory().createTopping(), type.getFactory().createBase());
   }
 
 }
