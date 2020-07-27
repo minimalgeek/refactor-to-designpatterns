@@ -8,11 +8,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class PrimeCalculatorTest {
 
-  private static NotEfficientPrimeCalculator primeCalculator;
+  private static IPrimeCalculator primeCalculator;
+
 
   @BeforeAll
   static void init() {
-    primeCalculator = new NotEfficientPrimeCalculator();
+    primeCalculator = new CachingPrimeCalculatorProxy(new NotEfficientPrimeCalculator());
   }
 
   @Test

@@ -1,6 +1,6 @@
 package com.csmastery.proxy;
 
-public class NotEfficientPrimeCalculator {
+public class NotEfficientPrimeCalculator implements IPrimeCalculator {
 
   public boolean isPrime(long i) {
     int counter=0;
