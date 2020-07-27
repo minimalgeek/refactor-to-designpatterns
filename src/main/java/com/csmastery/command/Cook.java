@@ -1,4 +1,4 @@
-package com.csmastery.command.model;
+package com.csmastery.command;
 
 public class Cook {
   public void cookSideDishForSteak() {
