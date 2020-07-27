@@ -1,4 +1,6 @@
-package com.csmastery.chainofresponsibility;
+package com.csmastery.chainofresponsibility.handler;
+
+import com.csmastery.chainofresponsibility.User;
 
 public class AgeHandler extends BaseHandler {
     @Override

@@ -1,4 +1,6 @@
-package com.csmastery.chainofresponsibility;
+package com.csmastery.chainofresponsibility.handler;
+
+import com.csmastery.chainofresponsibility.User;
 
 public abstract class BaseHandler implements Handler {
     private Handler nextHandler;

@@ -1,5 +1,6 @@
-package com.csmastery.chainofresponsibility;
+package com.csmastery.chainofresponsibility.handler;
 
+import com.csmastery.chainofresponsibility.User;
 import com.google.common.base.Strings;
 
 import java.util.regex.Matcher;
