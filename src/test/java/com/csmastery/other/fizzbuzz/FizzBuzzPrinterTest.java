@@ -1,7 +1,7 @@
-package com.csmastery.fizzbuzz;
+package com.csmastery.other.fizzbuzz;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,7 +19,7 @@ public class FizzBuzzPrinterTest {
 
   @Test
   public void smokeTest() {
-    assertTrue(printer != null);
+    assertNotNull(printer);
   }
 
   @Test
