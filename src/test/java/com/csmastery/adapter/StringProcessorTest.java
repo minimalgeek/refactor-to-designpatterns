@@ -30,9 +30,10 @@ public class StringProcessorTest {
   @Test
   public void splitSampleTextFromFile() throws IOException {
     File file = ResourcesFileReader.getInstance().readFile("adapter-data.txt");
+    TokenizerData adapter = new TokenizerDataFileAdapter(file, " ");
     String result = Files.asCharSource(file, Charsets.UTF_8).read();
     assertThat(result).isEqualTo("hello, I would like to tokenize myself!");
-    // assertThat(processor.tokenize(???)).contains("hello,", "I", "would", "like",
-    // "to", "tokenize", "myself!");
+    assertThat(processor.tokenize(adapter))
+        .contains("hello,", "I", "would", "like", "to", "tokenize", "myself!");
   }
 }
