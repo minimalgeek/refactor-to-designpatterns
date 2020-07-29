@@ -1,4 +1,4 @@
-package com.csmastery.fizzbuzz;
+package com.csmastery.other.fizzbuzz;
 
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;

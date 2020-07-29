@@ -1,4 +1,4 @@
-package com.csmastery.fizzbuzz;
+package com.csmastery.other.fizzbuzz;
 
 public class FizzBuzz {
 

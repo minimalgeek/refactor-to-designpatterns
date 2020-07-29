@@ -1,4 +1,4 @@
-package com.csmastery.util;
+package com.csmastery.other.util;
 
 import java.io.File;
 import java.net.URL;
@@ -7,7 +7,7 @@ public class ResourcesFileReader {
 
   private ResourcesFileReader() {
   }
-  
+
   private static ResourcesFileReader INSTANCE;
 
   public static ResourcesFileReader getInstance() {
