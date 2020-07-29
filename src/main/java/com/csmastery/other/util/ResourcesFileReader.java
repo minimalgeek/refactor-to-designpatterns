@@ -8,13 +8,13 @@ public class ResourcesFileReader {
   private ResourcesFileReader() {
   }
 
-  private static ResourcesFileReader INSTANCE;
+  private static ResourcesFileReader instance;
 
   public static ResourcesFileReader getInstance() {
-    if (INSTANCE == null) {
-      INSTANCE = new ResourcesFileReader();
+    if (instance == null) {
+      instance = new ResourcesFileReader();
     }
-    return INSTANCE;
+    return instance;
   }
 
   public File readFile(String fileName) {
