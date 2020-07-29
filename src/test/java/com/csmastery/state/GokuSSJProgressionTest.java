@@ -72,4 +72,14 @@ public class GokuSSJProgressionTest {
     assertThat(frieza.isAlive()).isFalse();
   }
 
+  @Test
+  public void gokuResetsAfterSSJ3ToHisDefaultState() {
+    assertThat(goku).extracting(Goku::hairColor, Goku::attackValue).containsExactly("Black", 9000);
+    goku.powerUp();
+    goku.powerUp();
+    goku.powerUp();
+    goku.powerUp();
+    assertThat(goku).extracting(Goku::hairColor, Goku::attackValue).containsExactly("Black", 9000);
+  }
+
 }
