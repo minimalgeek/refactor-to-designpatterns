@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.io.File;
 import java.io.IOException;
 
-import com.csmastery.util.ResourcesFileReader;
+import com.csmastery.other.util.ResourcesFileReader;
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
 

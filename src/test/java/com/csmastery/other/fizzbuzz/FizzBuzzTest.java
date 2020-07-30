@@ -1,4 +1,4 @@
-package com.csmastery.fizzbuzz;
+package com.csmastery.other.fizzbuzz;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

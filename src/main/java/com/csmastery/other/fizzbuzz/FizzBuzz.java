@@ -1,9 +1,9 @@
-package com.csmastery.fizzbuzz;
+package com.csmastery.other.fizzbuzz;
 
 public class FizzBuzz {
 
   public String convert(int i) {
-    StringBuffer buffer = new StringBuffer();
+    StringBuilder buffer = new StringBuilder();
     
     if (i % 3 == 0) {
       buffer.append("Fizz");
