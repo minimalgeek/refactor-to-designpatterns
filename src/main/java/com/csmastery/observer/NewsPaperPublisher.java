@@ -11,7 +11,11 @@ public class NewsPaperPublisher {
 
   public NewsPaperPublisher(String paperName) {
     executorService.scheduleAtFixedRate(() -> {
-      publishedPaper = NewsPaper.builder().name(paperName).content("Cows lose their jobs as milk prices drop").build();
+      if (paperName.equals("Blikk"))
+        publishedPaper = NewsPaper.builder().name(paperName).content("Cows lose their jobs as milk prices drop")
+            .build();
+      else
+        publishedPaper = NewsPaper.builder().name(paperName).content("Safety meeting ends in accident").build();
     }, 1, 2, TimeUnit.SECONDS);
   }
 
