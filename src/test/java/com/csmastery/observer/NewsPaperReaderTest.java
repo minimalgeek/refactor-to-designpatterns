@@ -2,16 +2,17 @@ package com.csmastery.observer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class NewsPaperReaderTest {
 
-  private NewsPaperPublisher publisher1;
-  private NewsPaperPublisher publisher2;
+  private NewsPaperPublisher publisher;
+  private ByteArrayOutputStream stream;
 
   private NewsPaperReader reader1;
   private NewsPaperReader reader2;
@@ -19,25 +20,31 @@ public class NewsPaperReaderTest {
 
   @BeforeEach
   public void init() {
-    publisher1 = new NewsPaperPublisher("Blikk");
-    publisher2 = new NewsPaperPublisher("Nepszava");
-    reader1 = NewsPaperReader.builder().publisher(publisher1).name("Emese").build();
-    reader2 = NewsPaperReader.builder().publisher(publisher1).name("Zoli").build();
-    reader3 = NewsPaperReader.builder().publisher(publisher2).name("Nora").build();
+    publisher = new NewsPaperPublisher();
+    reader1 = NewsPaperReader.builder().name("Emese").build();
+    reader2 = NewsPaperReader.builder().name("Zoli").build();
+    reader3 = NewsPaperReader.builder().name("Nora").build();
+
+    publisher.subscribe("Blikk", reader1);
+    publisher.subscribe("Blikk", reader2);
+    publisher.subscribe("Nepszava", reader3);
+
+    this.stream = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(stream));
   }
 
   @Test
-  @Timeout(value = 4, unit = TimeUnit.SECONDS)
+  @Order(1)
   public void firstTwoReadersCouldReadTheFirstPaperIn4Seconds() throws InterruptedException {
-    assertThat(reader1.readFirstPaper()).isEqualTo("Cows lose their jobs as milk prices drop");
-    assertThat(reader2.readFirstPaper()).isEqualTo("Cows lose their jobs as milk prices drop");
+    publisher.publish("Blikk", "Kiskutya");
+    assertThat(stream.toString()).isEqualToIgnoringWhitespace("KiskutyaKiskutya");
   }
-
   
   @Test
-  @Timeout(value = 4, unit = TimeUnit.SECONDS)
+  @Order(2)
   public void thirdReaderCouldReadTheFirstPaperIn4Seconds() throws InterruptedException {
-    assertThat(reader3.readFirstPaper()).isEqualTo("Safety meeting ends in accident");
+    publisher.publish("Nepszava", "Kismacska");
+    assertThat(stream.toString()).isEqualToIgnoringWhitespace("Kismacska");
   }
 
 }

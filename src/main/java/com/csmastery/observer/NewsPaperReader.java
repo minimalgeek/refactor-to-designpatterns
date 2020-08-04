@@ -3,17 +3,12 @@ package com.csmastery.observer;
 import lombok.Builder;
 
 @Builder
-public class NewsPaperReader {
+public class NewsPaperReader implements Subscriber<NewsPaper> {
 
-  private NewsPaperPublisher publisher;
   private String name;
 
-  public String readFirstPaper() throws InterruptedException {
-    while (publisher.publish() == null) {
-      System.out.println(this.name + " says: Still no news...");
-      Thread.sleep(200);
-    }
-    System.out.println(this.name + " says: Hooray, content arrived!");
-    return publisher.publish().getContent();
+  @Override
+  public void update(NewsPaper content) {
+    System.out.println(content.getContent());
   }
 }
