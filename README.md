@@ -10,7 +10,9 @@
 - Refactor the bad code :)
 
 ## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+All solution pull requests should go to the [solution branch](https://github.com/minimalgeek/refactor-to-designpatterns/tree/solution)
 
 Please make sure to update tests as appropriate.
 
