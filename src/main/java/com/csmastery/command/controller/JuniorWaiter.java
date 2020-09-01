@@ -1,14 +1,14 @@
-package com.csmastery.command;
+package com.csmastery.command.controller;
 
+import com.csmastery.command.order.ICommand;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class JuniorWaiter implements IWaiter {
 
-  private Chef chef;
+  private ICommand command;
 
   public void makeOrder() {
-    chef.cookSoup();
-    chef.cookPasta();
+    command.execute();
   }
 }
